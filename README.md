@@ -18331,6 +18331,5 @@ if (document.readyState === 'loading') {
 <button class="theme-toggle" id="themeToggle">
     <i class="fas fa-moon"></i>
 </button>
-
 </body>
 </html>
