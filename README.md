@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Академия Кибербезопасности - Защита от мошенничества</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -3662,6 +3662,219 @@
     .course-cards {
         grid-template-columns: repeat(5, 1fr);
     }
+}
+/* ========== СПЕЦИАЛЬНЫЕ ИСПРАВЛЕНИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ========== */
+
+/* Исправление для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    html, body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 15px 12px !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Фикс для hero-секции */
+    .hero-section {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 30px 15px !important;
+        border-radius: 15px !important;
+    }
+    
+    .hero-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        word-wrap: break-word !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        padding: 12px !important;
+    }
+    
+    .hero-stats {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 15px !important;
+        width: 100% !important;
+    }
+    
+    .hero-stat {
+        width: 100% !important;
+        max-width: 200px !important;
+        padding: 10px !important;
+    }
+    
+    /* Фикс для кнопок */
+    .btn, .btn-large {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* Фикс для карточек */
+    .feature-card, .course-card, .simulator-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 20px 15px !important;
+    }
+    
+    /* Фикс для сеток */
+    .features-grid, .course-cards, .simulators-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
+    
+    /* Фикс для модальных окон */
+    .modal-content {
+        width: 95% !important;
+        max-width: 95% !important;
+        padding: 20px 15px !important;
+        margin: 10px auto !important;
+    }
+    
+    /* Фикс для навигации */
+    .navbar {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .nav-container {
+        padding: 0 12px !important;
+        width: 100% !important;
+    }
+    
+    .logo {
+        font-size: 1.2rem !important;
+    }
+    
+    .logo i {
+        font-size: 1.3rem !important;
+    }
+    
+    .menu-btn {
+        width: 38px !important;
+        height: 38px !important;
+    }
+    
+    /* Фикс для выпадающего меню */
+    .dropdown-menu {
+        left: 10px !important;
+        right: 10px !important;
+        width: auto !important;
+        max-width: calc(100% - 20px) !important;
+    }
+    
+    /* Фикс для текста */
+    p, h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* Фикс для изображений */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Фикс для таблиц */
+    table {
+        width: 100% !important;
+        overflow-x: auto !important;
+        display: block !important;
+    }
+}
+
+/* Для очень маленьких телефонов (до 360px) */
+@media screen and (max-width: 360px) {
+    .hero-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+        padding: 10px !important;
+    }
+    
+    .btn, .btn-large {
+        padding: 10px 15px !important;
+        font-size: 0.9rem !important;
+        max-width: 240px !important;
+    }
+    
+    .logo {
+        font-size: 1rem !important;
+    }
+    
+    .logo i {
+        font-size: 1.1rem !important;
+    }
+    
+    .menu-btn {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* Исправление для горизонтальной ориентации */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        padding: 20px 15px !important;
+    }
+    
+    .hero-stats {
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    }
+    
+    .hero-stat {
+        width: auto !important;
+        min-width: 120px !important;
+    }
+    
+    .dropdown-menu {
+        max-height: 80vh !important;
+        overflow-y: auto !important;
+    }
+}
+
+/* Убираем горизонтальный скролл */
+body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+html {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 </style>
 </head>
