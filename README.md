@@ -3126,7 +3126,7 @@
 }
 /* ========== УЛУЧШЕННАЯ АДАПТИВНАЯ ВЕРСТКА ========== */
 
-/* Планшеты и небольшие ноутбуки (от 768px до 1024px) */
+/* Планшеты (до 1024px) */
 @media screen and (max-width: 1024px) {
     .container {
         padding: 25px 20px;
@@ -3136,10 +3136,6 @@
         font-size: 2.5rem;
     }
     
-    .hero-stats {
-        gap: 25px;
-    }
-    
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -3147,13 +3143,9 @@
     .course-cards {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .simulators-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
-/* Телефоны (до 768px) */
+/* Телефоны (до 768px) - ОСНОВНОЙ ДИЗАЙН КАК НА СКРИНШОТЕ */
 @media screen and (max-width: 768px) {
     body {
         padding-top: 60px;
@@ -3176,9 +3168,9 @@
         padding: 20px 15px;
     }
     
-    /* Hero секция - компактная как на скриншоте */
+    /* Hero секция - компактная */
     .hero-section {
-        padding: 30px 20px;
+        padding: 25px 20px;
         border-radius: 20px;
         margin-bottom: 30px;
     }
@@ -3188,47 +3180,48 @@
         margin-bottom: 15px;
     }
     
-    .hero-title::after {
-        width: 80px;
-        height: 3px;
-    }
-    
     .hero-subtitle {
         font-size: 1rem;
-        padding: 15px;
+        padding: 12px;
         margin-bottom: 25px;
-    }
-    
-    .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 20px;
-        margin-top: 25px;
-    }
-    
-    .hero-stat {
-        padding: 15px 10px;
-        min-width: auto;
-    }
-    
-    .hero-stat-number {
-        font-size: 1.8rem;
-    }
-    
-    .hero-stat-text {
-        font-size: 0.9rem;
     }
     
     /* Кнопки в hero */
     .hero-content .btn-large {
         padding: 12px 25px;
         font-size: 1rem;
-        width: auto;
+        margin: 5px;
         min-width: 180px;
     }
     
-    /* Заголовки секций */
+    /* Статистика в 2 колонки (как на втором скриншоте) */
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    
+    .hero-stat {
+        padding: 15px 10px;
+        min-width: auto;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+    }
+    
+    .hero-stat-number {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+    
+    .hero-stat-text {
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+    
+    /* Секция "Почему выбирают" */
     .section-title h2 {
         font-size: 1.8rem;
     }
@@ -3237,23 +3230,11 @@
         font-size: 1rem;
     }
     
-    /* Сетки - все в 1 колонку для компактности */
     .features-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
     
-    .course-cards {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .simulators-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    /* Карточки - компактные */
     .feature-card {
         padding: 25px 20px;
     }
@@ -3269,18 +3250,14 @@
         font-size: 1.3rem;
     }
     
+    /* Курсы */
+    .course-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
     .course-card {
         padding: 20px;
-    }
-    
-    .course-icon {
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-    }
-    
-    .course-card h3 {
-        font-size: 1.2rem;
     }
     
     /* CTA секция */
@@ -3306,30 +3283,12 @@
     .footer-section {
         text-align: center;
     }
-    
-    /* Табы */
-    .tabs {
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .tab {
-        width: 100%;
-        padding: 12px;
-    }
-    
-    /* Модальные окна */
-    .modal-content {
-        width: 95%;
-        padding: 25px;
-        margin: 0 15px;
-    }
 }
 
 /* Маленькие телефоны (до 480px) */
 @media screen and (max-width: 480px) {
     .hero-section {
-        padding: 25px 15px;
+        padding: 20px 15px;
     }
     
     .hero-title {
@@ -3338,29 +3297,13 @@
     
     .hero-subtitle {
         font-size: 0.95rem;
-        padding: 12px;
+        padding: 10px;
     }
     
-    .hero-stats {
-        grid-template-columns: 1fr; /* В 1 колонку на очень маленьких */
-        gap: 10px;
-    }
-    
-    .hero-stat {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 12px 15px;
-        text-align: left;
-    }
-    
-    .hero-stat-number {
-        font-size: 1.5rem;
-        margin-bottom: 0;
-    }
-    
-    .hero-stat-text {
-        font-size: 0.9rem;
+    /* Кнопки на всю ширину */
+    .hero-content div[style*="gap: 20px"] {
+        flex-direction: column !important;
+        gap: 10px !important;
     }
     
     .hero-content .btn-large {
@@ -3369,9 +3312,18 @@
         margin: 5px 0;
     }
     
-    .hero-content div[style*="gap: 20px"] {
-        flex-direction: column;
-        gap: 10px !important;
+    /* Статистика все еще в 2 колонки */
+    .hero-stats {
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .hero-stat-number {
+        font-size: 1.8rem;
+    }
+    
+    .hero-stat-text {
+        font-size: 0.85rem;
     }
     
     .section-title h2 {
@@ -3391,22 +3343,6 @@
     .feature-card h3 {
         font-size: 1.2rem;
     }
-    
-    .course-card {
-        padding: 18px;
-    }
-    
-    .btn, .btn-large {
-        padding: 10px 20px;
-        font-size: 0.95rem;
-    }
-    
-    .notification {
-        top: 70px;
-        right: 10px;
-        left: 10px;
-        width: auto;
-    }
 }
 
 /* Очень маленькие телефоны (до 360px) */
@@ -3415,31 +3351,33 @@
         font-size: 1.5rem;
     }
     
-    .hero-subtitle {
+    .hero-stats {
+        grid-template-columns: 1fr; /* В 1 колонку на очень маленьких */
+    }
+    
+    .hero-stat {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 15px;
+        text-align: left;
+    }
+    
+    .hero-stat-number {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+    
+    .hero-stat-text {
         font-size: 0.9rem;
     }
     
     .logo {
         font-size: 1.1rem;
     }
-    
-    .logo i {
-        font-size: 1.2rem;
-    }
-    
-    .menu-btn {
-        width: 35px;
-        height: 35px;
-    }
-    
-    .dropdown-menu {
-        left: 10px;
-        right: 10px;
-        width: auto;
-    }
 }
 
-/* Исправление для горизонтальной ориентации */
+/* Горизонтальная ориентация */
 @media screen and (max-height: 500px) and (orientation: landscape) {
     .hero-section {
         padding: 20px;
@@ -3448,10 +3386,143 @@
     .hero-stats {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+/* ========== ИСПРАВЛЕНИЕ МАСШТАБИРОВАНИЯ НА ТЕЛЕФОНАХ ========== */
+
+/* Принудительно убираем горизонтальный скролл */
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Все элементы не должны выходить за пределы */
+* {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Контейнер всегда на всю ширину */
+.container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Hero секция на всю ширину */
+.hero-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 20px !important;
+    box-sizing: border-box !important;
+}
+
+/* Карточки не вылезают */
+.feature-card,
+.course-card,
+.simulator-card,
+.card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Сетки правильно распределяют пространство */
+.features-grid,
+.course-cards,
+.simulators-grid,
+.stats-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    gap: 15px !important;
+    box-sizing: border-box !important;
+}
+
+/* Изображения не вылезают */
+img, svg, iframe, video {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Таблицы с горизонтальной прокруткой */
+table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+/* Кнопки не вылезают */
+.btn, .btn-large {
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+/* Специально для очень маленьких экранов */
+@media screen and (max-width: 480px) {
+    /* Убираем фиксированные размеры у всего */
+    [class*="width"],
+    [class*="size"],
+    [style*="width"] {
+        max-width: 100% !important;
+        width: auto !important;
+    }
     
-    .dropdown-menu {
-        max-height: 80vh;
-        overflow-y: auto;
+    /* Статистика в 2 колонки */
+    .hero-stats {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        padding: 15px !important;
+    }
+    
+    .hero-stat {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 12px 8px !important;
+    }
+    
+    /* Кнопки на всю ширину */
+    .hero-content div[style*="gap: 20px"] {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    
+    .hero-content .btn-large {
+        width: 100% !important;
+        margin: 5px 0 !important;
+    }
+}
+
+/* Для экранов меньше 360px */
+@media screen and (max-width: 360px) {
+    .hero-stats {
+        grid-template-columns: 1fr !important; /* В 1 колонку */
+    }
+    
+    .hero-stat {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        text-align: left !important;
+    }
+    
+    .hero-stat-number {
+        font-size: 1.5rem !important;
+        margin-bottom: 0 !important;
     }
 }
 </style>
