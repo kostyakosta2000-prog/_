@@ -3126,6 +3126,8 @@
 }
 /* ========== УЛУЧШЕННАЯ АДАПТИВНАЯ ВЕРСТКА ========== */
 
+/* ========== АДАПТИВНАЯ ВЕРСТКА ДЛЯ ТЕЛЕФОНОВ ========== */
+
 /* Планшеты (до 1024px) */
 @media screen and (max-width: 1024px) {
     .container {
@@ -3135,17 +3137,9 @@
     .hero-title {
         font-size: 2.5rem;
     }
-    
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .course-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
 }
 
-/* Телефоны (до 768px) - ОСНОВНОЙ ДИЗАЙН КАК НА СКРИНШОТЕ */
+/* Телефоны (до 768px) */
 @media screen and (max-width: 768px) {
     body {
         padding-top: 60px;
@@ -3155,140 +3149,84 @@
         height: 60px;
     }
     
-    .logo {
-        font-size: 1.3rem;
-    }
-    
-    .menu-btn {
-        width: 40px;
-        height: 40px;
-    }
-    
     .container {
         padding: 20px 15px;
     }
     
-    /* Hero секция - компактная */
+    /* Hero секция */
     .hero-section {
         padding: 25px 20px;
         border-radius: 20px;
-        margin-bottom: 30px;
     }
     
     .hero-title {
         font-size: 2rem;
-        margin-bottom: 15px;
     }
     
     .hero-subtitle {
         font-size: 1rem;
         padding: 12px;
-        margin-bottom: 25px;
     }
     
     /* Кнопки в hero */
     .hero-content .btn-large {
         padding: 12px 25px;
         font-size: 1rem;
-        margin: 5px;
         min-width: 180px;
     }
     
-    /* Статистика в 2 колонки (как на втором скриншоте) */
+    /* Статистика ВСЕГДА в 2 колонки на телефонах */
     .hero-stats {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 20px;
-        margin-top: 30px;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        padding: 15px !important;
+        margin-top: 25px !important;
     }
     
     .hero-stat {
-        padding: 15px 10px;
-        min-width: auto;
+        padding: 12px 8px !important;
+        min-width: auto !important;
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
+        border-radius: 12px;
         backdrop-filter: blur(5px);
     }
     
     .hero-stat-number {
-        font-size: 2rem;
-        margin-bottom: 5px;
+        font-size: 1.8rem !important;
+        margin-bottom: 3px !important;
     }
     
     .hero-stat-text {
-        font-size: 0.9rem;
+        font-size: 0.85rem !important;
         opacity: 0.9;
     }
     
-    /* Секция "Почему выбирают" */
-    .section-title h2 {
-        font-size: 1.8rem;
+    /* Кнопки на телефонах */
+    .hero-content div[style*="gap: 20px"] {
+        flex-direction: column !important;
+        gap: 10px !important;
+        width: 100% !important;
     }
     
-    .section-title p {
-        font-size: 1rem;
+    .hero-content .btn-large {
+        width: 100% !important;
+        min-width: auto !important;
+        margin: 0 !important;
     }
     
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .feature-card {
-        padding: 25px 20px;
-    }
-    
-    .feature-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
-    
-    .feature-card h3 {
-        font-size: 1.3rem;
-    }
-    
-    /* Курсы */
+    /* Секции */
+    .features-grid,
     .course-cards {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
-    .course-card {
-        padding: 20px;
-    }
-    
-    /* CTA секция */
-    .cta-section {
-        padding: 40px 25px;
-    }
-    
-    .cta-title {
-        font-size: 1.8rem;
-    }
-    
-    .cta-text {
-        font-size: 1rem;
-        margin-bottom: 30px;
-    }
-    
-    /* Футер */
-    .footer-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .footer-section {
-        text-align: center;
-    }
 }
 
-/* Маленькие телефоны (до 480px) */
+/* Маленькие телефоны (до 480px) - статистика все еще в 2 колонки */
 @media screen and (max-width: 480px) {
     .hero-section {
-        padding: 20px 15px;
+        padding: 20px 12px;
     }
     
     .hero-title {
@@ -3300,96 +3238,52 @@
         padding: 10px;
     }
     
-    /* Кнопки на всю ширину */
-    .hero-content div[style*="gap: 20px"] {
-        flex-direction: column !important;
-        gap: 10px !important;
-    }
-    
-    .hero-content .btn-large {
-        width: 100%;
-        min-width: auto;
-        margin: 5px 0;
-    }
-    
-    /* Статистика все еще в 2 колонки */
     .hero-stats {
-        gap: 10px;
-        padding: 15px;
+        gap: 8px !important;
+        padding: 12px !important;
     }
     
     .hero-stat-number {
-        font-size: 1.8rem;
+        font-size: 1.6rem !important;
     }
     
     .hero-stat-text {
-        font-size: 0.85rem;
+        font-size: 0.8rem !important;
     }
     
     .section-title h2 {
         font-size: 1.6rem;
     }
-    
-    .feature-card {
-        padding: 20px 15px;
-    }
-    
-    .feature-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
-    
-    .feature-card h3 {
-        font-size: 1.2rem;
-    }
 }
 
-/* Очень маленькие телефоны (до 360px) */
+/* ОЧЕНЬ маленькие телефоны (до 360px) - ТОЛЬКО ЗДЕСЬ 1 колонка */
 @media screen and (max-width: 360px) {
-    .hero-title {
-        font-size: 1.5rem;
-    }
-    
     .hero-stats {
-        grid-template-columns: 1fr; /* В 1 колонку на очень маленьких */
+        grid-template-columns: 1fr !important; /* Одна колонка только на очень маленьких */
     }
     
     .hero-stat {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 15px;
-        text-align: left;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        padding: 12px 15px !important;
+        text-align: left !important;
     }
     
     .hero-stat-number {
-        font-size: 1.5rem;
-        margin-bottom: 0;
+        font-size: 1.5rem !important;
+        margin-bottom: 0 !important;
     }
     
     .hero-stat-text {
-        font-size: 0.9rem;
+        font-size: 0.9rem !important;
     }
     
-    .logo {
-        font-size: 1.1rem;
+    .hero-title {
+        font-size: 1.6rem;
     }
 }
-
-/* Горизонтальная ориентация */
-@media screen and (max-height: 500px) and (orientation: landscape) {
-    .hero-section {
-        padding: 20px;
-    }
-    
-    .hero-stats {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-/* ========== ИСПРАВЛЕНИЕ МАСШТАБИРОВАНИЯ НА ТЕЛЕФОНАХ ========== */
-
-/* Принудительно убираем горизонтальный скролл */
+/* ========== ИСПРАВЛЕНИЕ МАСШТАБИРОВАНИЯ ========== */
 html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
@@ -3398,132 +3292,24 @@ html, body {
     padding: 0 !important;
 }
 
-/* Все элементы не должны выходить за пределы */
 * {
     max-width: 100% !important;
     box-sizing: border-box !important;
 }
 
-/* Контейнер всегда на всю ширину */
 .container {
     width: 100% !important;
     max-width: 100% !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
     margin: 0 auto !important;
-    box-sizing: border-box !important;
 }
 
-/* Hero секция на всю ширину */
 .hero-section {
     width: 100% !important;
     max-width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
-    border-radius: 20px !important;
-    box-sizing: border-box !important;
-}
-
-/* Карточки не вылезают */
-.feature-card,
-.course-card,
-.simulator-card,
-.card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    box-sizing: border-box !important;
-}
-
-/* Сетки правильно распределяют пространство */
-.features-grid,
-.course-cards,
-.simulators-grid,
-.stats-grid {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
-    gap: 15px !important;
-    box-sizing: border-box !important;
-}
-
-/* Изображения не вылезают */
-img, svg, iframe, video {
-    max-width: 100% !important;
-    height: auto !important;
-}
-
-/* Таблицы с горизонтальной прокруткой */
-table {
-    display: block !important;
-    width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-}
-
-/* Кнопки не вылезают */
-.btn, .btn-large {
-    max-width: 100% !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-}
-
-/* Специально для очень маленьких экранов */
-@media screen and (max-width: 480px) {
-    /* Убираем фиксированные размеры у всего */
-    [class*="width"],
-    [class*="size"],
-    [style*="width"] {
-        max-width: 100% !important;
-        width: auto !important;
-    }
-    
-    /* Статистика в 2 колонки */
-    .hero-stats {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
-        width: 100% !important;
-        padding: 15px !important;
-    }
-    
-    .hero-stat {
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 12px 8px !important;
-    }
-    
-    /* Кнопки на всю ширину */
-    .hero-content div[style*="gap: 20px"] {
-        flex-direction: column !important;
-        width: 100% !important;
-    }
-    
-    .hero-content .btn-large {
-        width: 100% !important;
-        margin: 5px 0 !important;
-    }
-}
-
-/* Для экранов меньше 360px */
-@media screen and (max-width: 360px) {
-    .hero-stats {
-        grid-template-columns: 1fr !important; /* В 1 колонку */
-    }
-    
-    .hero-stat {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        text-align: left !important;
-    }
-    
-    .hero-stat-number {
-        font-size: 1.5rem !important;
-        margin-bottom: 0 !important;
-    }
 }
 </style>
 </head>
