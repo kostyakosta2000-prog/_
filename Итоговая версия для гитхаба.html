@@ -2,6 +2,44 @@
 <html lang="ru">
 
 <head>
+    <script>
+        // Меняем заголовок страницы мгновенно
+        document.title = "Академия Кибербезопасности";
+        
+        // Удаляем любые элементы, которые могут добавлять название репозитория
+        (function() {
+            // Функция для удаления элементов с текстом "-_-"
+            function removeBadTitle() {
+                // Ищем все элементы на странице
+                const allElements = document.querySelectorAll('*');
+                
+                allElements.forEach(el => {
+                    // Если элемент содержит текст "-_-" и это не наша навигация
+                    if (el.textContent && el.textContent.includes('-_-') && 
+                        !el.classList.contains('logo') && 
+                        !el.classList.contains('dropdown-link')) {
+                        
+                        // Если это маленький элемент (скорее всего авто-добавленный)
+                        if (el.children.length === 0 && el.textContent.trim() === '-_-') {
+                            el.remove();
+                        }
+                        // Если это текстовый узел в body
+                        else if (el.tagName === 'BODY' || el.tagName === 'DIV') {
+                            el.textContent = el.textContent.replace(/-_-/g, '');
+                        }
+                    }
+                });
+            }
+            
+            // Запускаем сразу
+            removeBadTitle();
+            
+            // И запускаем несколько раз после загрузки
+            setTimeout(removeBadTitle, 100);
+            setTimeout(removeBadTitle, 500);
+            setTimeout(removeBadTitle, 1000);
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Академия Кибербезопасности - Защита от мошенничества</title>
