@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Академия Кибербезопасности - Защита от мошенничества</title>
+<script>
+        // Этот скрипт выполнится самым первым
+        document.title = "Академия Кибербезопасности";
+    </script>
  <meta property="og:title" content="Академия Кибербезопасности">
     <meta property="og:site_name" content="Академия Кибербезопасности">
     <meta property="og:description" content="Интерактивная обучающая платформа по кибербезопасности">
